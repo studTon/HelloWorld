@@ -1,2 +1,2 @@
 # HelloWorld
- My small projects
+ My small projects. Exercises about Logic Programming.
