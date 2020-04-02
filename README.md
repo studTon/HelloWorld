@@ -1,2 +1,3 @@
 # HelloWorld
- My small projects. Exercises about Logic Programming.
+ My small projects. Exercises about Logic Programming. 
+ Basic.
