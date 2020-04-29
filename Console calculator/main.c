@@ -9,7 +9,7 @@ main()
     double quocient, numDv1, numDv2;//Division factors
     do
     {
-       puts("Type the option.(0)Exit|(1)Addition|(2)Subtraction|(3)Multiplication|(4)Division");
+       puts("Type a number");
        scanf("%d", &op);
        switch (op)
        {
