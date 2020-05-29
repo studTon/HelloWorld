@@ -7,6 +7,7 @@ main() {
 	printf("Type a string: ");
 	gets(str);
 	for(i = 0; str[i] != '\0'; i++){
+		//using ASCII code I transformed lowercase letters in uppercase.
 		if(str[i] >= 'a' && str[i] <= 'z'){
 			str[i] -= 32;
 		}
