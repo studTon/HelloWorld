@@ -6,7 +6,7 @@ main(){
 	cent = numero/100;
 	deze = (numero%100)/10;
 	unid = (numero%100)%10;
-	/*I created a selection structure for the numbers name. The names that repeat i used to put a pattern to be printed.*/
+	/* Para os nomes que se repetem adotei um padrão.*/
 	if((cent==0)&&(deze==0)){
 		switch(unid){
 		case 0 : printf("Zero.\n"); break;
