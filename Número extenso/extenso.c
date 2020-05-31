@@ -1,12 +1,38 @@
+
+/*
+---------------------------------------------
+Acredito que esse código se encaixa bem numa 
+função para converter os algarismos digitados 
+nos nomes extensos.
+---------------------------------------------
+*/
 #include <stdio.h>
 main(){
-	int numero, cent, deze, unid;
+	int num, cent, deze, unid;
 	printf("Entre com o numero.\n");
-	scanf("%d", &numero);
-	cent = numero/100;
-	deze = (numero%100)/10;
-	unid = (numero%100)%10;
-	/* Para os nomes que se repetem adotei um padrÃ£o.*/
+	scanf("%d", &num);
+	cent = num/100;
+	deze = (num%100)/10;
+	unid = (num%100)%10;
+	/* Para os nomes que se repetem adotei um padrão.*/
+	if(cent >= 1 && cent <= 9){
+			switch(cent){
+				case 1: if(deze!=0||unid!=0){
+							printf("Cento");
+						}
+						else{
+							printf("Cem");
+						}break;
+				case 2: printf("Duzentos"); break;
+				case 3: printf("Trezentos"); break;
+				case 4: printf("Quatrocentos"); break;
+				case 5: printf("Quinhentos"); break;
+				case 6: printf("Seiscentos"); break;
+				case 7: printf("Setecentos"); break;
+				case 8: printf("Oitocentos"); break;
+				case 9: printf("Novecentos"); break;
+			}
+		}
 	if((cent==0)&&(deze==0)){
 		switch(unid){
 		case 0 : printf("Zero.\n"); break;
@@ -21,7 +47,7 @@ main(){
 		case 9 : printf("Nove.\n"); break;
 		}
 	}
-	if((cent==0)&&(deze!=0)){
+	if((cent==0)&&(deze!=0))
 		if(deze==1){
 			switch(unid){
 			case 0 : printf("Dez.\n"); break;
@@ -36,18 +62,57 @@ main(){
 			case 9 : printf("Dezenove.\n"); break;
 			}
 		}
-		switch(deze){
-			case 2: printf("Vinte");break;
-			case 3: printf("Trinta");break;
-			case 4: printf("Quarenta");break;
-			case 5: printf("Cinquenta");break;
-			case 6: printf("Sessenta");break;
-			case 7: printf("Setenta");break;
-			case 8: printf("Oitenta");break;
-			case 9: printf("Noventa");break;
-		}
-		}
-		if((deze>=2&&deze<=9)&&(unid!=0)){
+		if(cent>=0||cent<=9)
+			switch(deze){
+				case 1: if(cent>0&&cent<=9){
+					switch(unid){
+						case 0 : printf(" e dez.\n"); break;
+						case 1 : printf(" e onze.\n"); break;
+						case 2 : printf(" e doze.\n"); break;
+						case 3 : printf(" e treze.\n"); break;
+						case 4 : printf(" e quatorze.\n"); break;
+						case 5 : printf(" e quinze.\n"); break;
+						case 6 : printf(" e dezesseis.\n"); break;
+						case 7 : printf(" e dezessete.\n"); break;
+						case 8 : printf(" e dezoito.\n"); break;
+						case 9 : printf(" e dezenove.\n"); break;
+					}	
+				}
+				break;
+				case 2: if(cent == 0)
+							printf("Vinte");
+						else
+							printf(" e vinte");break;
+				case 3: if(cent == 0)
+							printf("Trinta");
+						else
+							printf(" e trinta");break;
+				case 4: if(cent == 0)
+							printf("Quarenta");
+						else
+							printf(" e quarenta");break;
+				case 5: if(cent == 0)
+							printf("Cinquenta");
+						else
+							printf(" e cinquenta");break;
+				case 6: if(cent == 0)
+							printf("Sessenta");
+						else
+							printf(" e sessenta");break;
+				case 7: if(cent == 0)
+							printf("Setenta");
+						else
+							printf(" e setenta");break;
+				case 8: if(cent == 0)
+							printf("Oitenta");
+						else
+							printf(" e oitenta");break;
+				case 9: if(cent == 0)
+							printf("Noventa");
+						else
+							printf(" e noventa");break;
+			}
+		if(deze>1||(cent>0&&deze!=1)){
 			switch(unid){
 				case 1 : printf(" e um.\n"); break;
 				case 2 : printf(" e dois.\n"); break;
@@ -60,36 +125,8 @@ main(){
 				case 9 : printf(" e nove.\n"); break;
 				}
 		}
-	if(cent==1)
-		if((deze==0)&&(unid==0))
-			printf("Cem.\n");
-		else{
-			printf("Cento");
-			if(deze==1)
-				switch(unid){
-				case 0 : printf(" e dez.\n"); break;
-				case 1 : printf(" e onze.\n"); break;
-				case 2 : printf(" e doze.\n"); break;
-				case 3 : printf(" e treze.\n"); break;
-				case 4 : printf(" e quatorze.\n"); break;
-				case 5 : printf(" e quinze.\n"); break;
-				case 6 : printf(" e dezesseis.\n"); break;
-				case 7 : printf(" e dezessete.\n"); break;
-				case 8 : printf(" e dezoito.\n"); break;
-				case 9 : printf(" e dezenove.\n"); break;
-				}
-			else{
-				switch(deze){
-				case 2 : printf(" e vinte"); break;
-				case 3 : printf(" e trinta"); break;
-				case 4 : printf(" e quarenta"); break;
-				case 5 : printf(" e cinquenta"); break;
-				case 6 : printf(" e sessenta"); break;
-				case 7 : printf(" e setenta"); break;
-				case 8 : printf(" e oitenta"); break;
-				case 9 : printf(" e noventa"); break;
-				}
-				switch(unid){
+		if(cent >= 1 && cent <= 9 && deze == 0){
+			switch(unid){
 				case 1 : printf(" e um.\n"); break;
 				case 2 : printf(" e dois.\n"); break;
 				case 3 : printf(" e tres.\n"); break;
@@ -100,342 +137,6 @@ main(){
 				case 8 : printf(" e oito.\n"); break;
 				case 9 : printf(" e nove.\n"); break;
 				}
-			}
 		}
-	if(cent==2)
-		if((deze==0)&&(unid==0))
-			printf("Duzentos.\n");
-		else{
-			printf("Duzentos");
-			if(deze==1)
-				switch(unid){
-				case 0 : printf(" e dez.\n"); break;
-				case 1 : printf(" e onze.\n"); break;
-				case 2 : printf(" e doze.\n"); break;
-				case 3 : printf(" e treze.\n"); break;
-				case 4 : printf(" e quatorze.\n"); break;
-				case 5 : printf(" e quinze.\n"); break;
-				case 6 : printf(" e dezesseis.\n"); break;
-				case 7 : printf(" e dezessete.\n"); break;
-				case 8 : printf(" e dezoito.\n"); break;
-				case 9 : printf(" e dezenove.\n"); break;
-				}
-			else{
-				switch(deze){
-				case 2 : printf(" e vinte"); break;
-				case 3 : printf(" e trinta"); break;
-				case 4 : printf(" e quarenta"); break;
-				case 5 : printf(" e cinquenta"); break;
-				case 6 : printf(" e sessenta"); break;
-				case 7 : printf(" e setenta"); break;
-				case 8 : printf(" e oitenta"); break;
-				case 9 : printf(" e noventa"); break;
-				}
-				switch(unid){
-				case 1 : printf(" e um.\n"); break;
-				case 2 : printf(" e dois.\n"); break;
-				case 3 : printf(" e tres.\n"); break;
-				case 4 : printf(" e quatro.\n"); break;
-				case 5 : printf(" e cinco.\n"); break;
-				case 6 : printf(" e seis.\n"); break;
-				case 7 : printf(" e sete.\n"); break;
-				case 8 : printf(" e oito.\n"); break;
-				case 9 : printf(" e nove.\n"); break;
-				}
-			}
-		}
-	if(cent==3)
-		if((deze==0)&&(unid==0))
-			printf("Trezentos.\n");
-		else{
-			printf("Trezentos");
-			if(deze==1)
-				switch(unid){
-				case 0 : printf(" e dez.\n"); break;
-				case 1 : printf(" e onze.\n"); break;
-				case 2 : printf(" e doze.\n"); break;
-				case 3 : printf(" e treze.\n"); break;
-				case 4 : printf(" e quatorze.\n"); break;
-				case 5 : printf(" e quinze.\n"); break;
-				case 6 : printf(" e dezesseis.\n"); break;
-				case 7 : printf(" e dezessete.\n"); break;
-				case 8 : printf(" e dezoito.\n"); break;
-				case 9 : printf(" e dezenove.\n"); break;
-				}
-			else{
-				switch(deze){
-				case 2 : printf(" e vinte"); break;
-				case 3 : printf(" e trinta"); break;
-				case 4 : printf(" e quarenta"); break;
-				case 5 : printf(" e cinquenta"); break;
-				case 6 : printf(" e sessenta"); break;
-				case 7 : printf(" e setenta"); break;
-				case 8 : printf(" e oitenta"); break;
-				case 9 : printf(" e noventa"); break;
-				}
-				switch(unid){
-				case 1 : printf(" e um.\n"); break;
-				case 2 : printf(" e dois.\n"); break;
-				case 3 : printf(" e tres.\n"); break;
-				case 4 : printf(" e quatro.\n"); break;
-				case 5 : printf(" e cinco.\n"); break;
-				case 6 : printf(" e seis.\n"); break;
-				case 7 : printf(" e sete.\n"); break;
-				case 8 : printf(" e oito.\n"); break;
-				case 9 : printf(" e nove.\n"); break;
-				}
-			}
-		}
-	if(cent==4)
-		if((deze==0)&&(unid==0))
-			printf("Quatrocentos.\n");
-		else{
-			printf("Quatrocentos");
-			if(deze==1)
-				switch(unid){
-				case 0 : printf(" e dez.\n"); break;
-				case 1 : printf(" e onze.\n"); break;
-				case 2 : printf(" e doze.\n"); break;
-				case 3 : printf(" e treze.\n"); break;
-				case 4 : printf(" e quatorze.\n"); break;
-				case 5 : printf(" e quinze.\n"); break;
-				case 6 : printf(" e dezesseis.\n"); break;
-				case 7 : printf(" e dezessete.\n"); break;
-				case 8 : printf(" e dezoito.\n"); break;
-				case 9 : printf(" e dezenove.\n"); break;
-				}
-			else{
-				switch(deze){
-				case 2 : printf(" e vinte"); break;
-				case 3 : printf(" e trinta"); break;
-				case 4 : printf(" e quarenta"); break;
-				case 5 : printf(" e cinquenta"); break;
-				case 6 : printf(" e sessenta"); break;
-				case 7 : printf(" e setenta"); break;
-				case 8 : printf(" e oitenta"); break;
-				case 9 : printf(" e noventa"); break;
-				}
-				switch(unid){
-				case 1 : printf(" e um.\n"); break;
-				case 2 : printf(" e dois.\n"); break;
-				case 3 : printf(" e tres.\n"); break;
-				case 4 : printf(" e quatro.\n"); break;
-				case 5 : printf(" e cinco.\n"); break;
-				case 6 : printf(" e seis.\n"); break;
-				case 7 : printf(" e sete.\n"); break;
-				case 8 : printf(" e oito.\n"); break;
-				case 9 : printf(" e nove.\n"); break;
-				}
-			}
-		}
-	if(cent==5)
-		if((deze==0)&&(unid==0))
-			printf("Quinhentos.\n");
-		else{
-			printf("Quinhentos");
-			if(deze==1)
-				switch(unid){
-				case 0 : printf(" e dez.\n"); break;
-				case 1 : printf(" e onze.\n"); break;
-				case 2 : printf(" e doze.\n"); break;
-				case 3 : printf(" e treze.\n"); break;
-				case 4 : printf(" e quatorze.\n"); break;
-				case 5 : printf(" e quinze.\n"); break;
-				case 6 : printf(" e dezesseis.\n"); break;
-				case 7 : printf(" e dezessete.\n"); break;
-				case 8 : printf(" e dezoito.\n"); break;
-				case 9 : printf(" e dezenove.\n"); break;
-				}
-			else{
-				switch(deze){
-				case 2 : printf(" e vinte"); break;
-				case 3 : printf(" e trinta"); break;
-				case 4 : printf(" e quarenta"); break;
-				case 5 : printf(" e cinquenta"); break;
-				case 6 : printf(" e sessenta"); break;
-				case 7 : printf(" e setenta"); break;
-				case 8 : printf(" e oitenta"); break;
-				case 9 : printf(" e noventa"); break;
-				}
-				switch(unid){
-				case 1 : printf(" e um.\n"); break;
-				case 2 : printf(" e dois.\n"); break;
-				case 3 : printf(" e tres.\n"); break;
-				case 4 : printf(" e quatro.\n"); break;
-				case 5 : printf(" e cinco.\n"); break;
-				case 6 : printf(" e seis.\n"); break;
-				case 7 : printf(" e sete.\n"); break;
-				case 8 : printf(" e oito.\n"); break;
-				case 9 : printf(" e nove.\n"); break;
-				}
-			}
-		}
-	if(cent==6)
-		if((deze==0)&&(unid==0))
-			printf("Seiscentos.\n");
-		else{
-			printf("Seiscentos");
-			if(deze==1)
-				switch(unid){
-				case 0 : printf(" e dez.\n"); break;
-				case 1 : printf(" e onze.\n"); break;
-				case 2 : printf(" e doze.\n"); break;
-				case 3 : printf(" e treze.\n"); break;
-				case 4 : printf(" e quatorze.\n"); break;
-				case 5 : printf(" e quinze.\n"); break;
-				case 6 : printf(" e dezesseis.\n"); break;
-				case 7 : printf(" e dezessete.\n"); break;
-				case 8 : printf(" e dezoito.\n"); break;
-				case 9 : printf(" e dezenove.\n"); break;
-				}
-			else{
-				switch(deze){
-				case 2 : printf(" e vinte"); break;
-				case 3 : printf(" e trinta"); break;
-				case 4 : printf(" e quarenta"); break;
-				case 5 : printf(" e cinquenta"); break;
-				case 6 : printf(" e sessenta"); break;
-				case 7 : printf(" e setenta"); break;
-				case 8 : printf(" e oitenta"); break;
-				case 9 : printf(" e noventa"); break;
-				}
-				switch(unid){
-				case 1 : printf(" e um.\n"); break;
-				case 2 : printf(" e dois.\n"); break;
-				case 3 : printf(" e tres.\n"); break;
-				case 4 : printf(" e quatro.\n"); break;
-				case 5 : printf(" e cinco.\n"); break;
-				case 6 : printf(" e seis.\n"); break;
-				case 7 : printf(" e sete.\n"); break;
-				case 8 : printf(" e oito.\n"); break;
-				case 9 : printf(" e nove.\n"); break;
-				}
-			}
-		}
-	if(cent==7)
-		if((deze==0)&&(unid==0))
-			printf("Setecentos.\n");
-		else{
-			printf("Setecentos");
-			if(deze==1)
-				switch(unid){
-				case 0 : printf(" e dez.\n"); break;
-				case 1 : printf(" e onze.\n"); break;
-				case 2 : printf(" e doze.\n"); break;
-				case 3 : printf(" e treze.\n"); break;
-				case 4 : printf(" e quatorze.\n"); break;
-				case 5 : printf(" e quinze.\n"); break;
-				case 6 : printf(" e dezesseis.\n"); break;
-				case 7 : printf(" e dezessete.\n"); break;
-				case 8 : printf(" e dezoito.\n"); break;
-				case 9 : printf(" e dezenove.\n"); break;
-				}
-			else{
-				switch(deze){
-				case 2 : printf(" e vinte"); break;
-				case 3 : printf(" e trinta"); break;
-				case 4 : printf(" e quarenta"); break;
-				case 5 : printf(" e cinquenta"); break;
-				case 6 : printf(" e sessenta"); break;
-				case 7 : printf(" e setenta"); break;
-				case 8 : printf(" e oitenta"); break;
-				case 9 : printf(" e noventa"); break;
-				}
-				switch(unid){
-				case 1 : printf(" e um.\n"); break;
-				case 2 : printf(" e dois.\n"); break;
-				case 3 : printf(" e tres.\n"); break;
-				case 4 : printf(" e quatro.\n"); break;
-				case 5 : printf(" e cinco.\n"); break;
-				case 6 : printf(" e seis.\n"); break;
-				case 7 : printf(" e sete.\n"); break;
-				case 8 : printf(" e oito.\n"); break;
-				case 9 : printf(" e nove.\n"); break;
-				}
-			}
-		}
-	if(cent==8)
-		if((deze==0)&&(unid==0))
-			printf("Oitocentos.\n");
-		else{
-			printf("Oitocentos");
-			if(deze==1)
-				switch(unid){
-				case 0 : printf(" e dez.\n"); break;
-				case 1 : printf(" e onze.\n"); break;
-				case 2 : printf(" e doze.\n"); break;
-				case 3 : printf(" e treze.\n"); break;
-				case 4 : printf(" e quatorze.\n"); break;
-				case 5 : printf(" e quinze.\n"); break;
-				case 6 : printf(" e dezesseis.\n"); break;
-				case 7 : printf(" e dezessete.\n"); break;
-				case 8 : printf(" e dezoito.\n"); break;
-				case 9 : printf(" e dezenove.\n"); break;
-				}
-			else{
-				switch(deze){
-				case 2 : printf(" e vinte"); break;
-				case 3 : printf(" e trinta"); break;
-				case 4 : printf(" e quarenta"); break;
-				case 5 : printf(" e cinquenta"); break;
-				case 6 : printf(" e sessenta"); break;
-				case 7 : printf(" e setenta"); break;
-				case 8 : printf(" e oitenta"); break;
-				case 9 : printf(" e noventa"); break;
-				}
-				switch(unid){
-				case 1 : printf(" e um.\n"); break;
-				case 2 : printf(" e dois.\n"); break;
-				case 3 : printf(" e tres.\n"); break;
-				case 4 : printf(" e quatro.\n"); break;
-				case 5 : printf(" e cinco.\n"); break;
-				case 6 : printf(" e seis.\n"); break;
-				case 7 : printf(" e sete.\n"); break;
-				case 8 : printf(" e oito.\n"); break;
-				case 9 : printf(" e nove.\n"); break;
-				}
-			}
-		}
-	if(cent==9)
-		if((deze==0)&&(unid==0))
-			printf("Novecentos.\n");
-		else{
-			printf("Novecentos");
-			if(deze==1)
-				switch(unid){
-				case 0 : printf(" e dez.\n"); break;
-				case 1 : printf(" e onze.\n"); break;
-				case 2 : printf(" e doze.\n"); break;
-				case 3 : printf(" e treze.\n"); break;
-				case 4 : printf(" e quatorze.\n"); break;
-				case 5 : printf(" e quinze.\n"); break;
-				case 6 : printf(" e dezesseis.\n"); break;
-				case 7 : printf(" e dezessete.\n"); break;
-				case 8 : printf(" e dezoito.\n"); break;
-				case 9 : printf(" e dezenove.\n"); break;
-				}
-			else{
-				switch(deze){
-				case 2 : printf(" e vinte"); break;
-				case 3 : printf(" e trinta"); break;
-				case 4 : printf(" e quarenta"); break;
-				case 5 : printf(" e cinquenta"); break;
-				case 6 : printf(" e sessenta"); break;
-				case 7 : printf(" e setenta"); break;
-				case 8 : printf(" e oitenta"); break;
-				case 9 : printf(" e noventa"); break;
-				}
-				switch(unid){
-				case 1 : printf(" e um.\n"); break;
-				case 2 : printf(" e dois.\n"); break;
-				case 3 : printf(" e tres.\n"); break;
-				case 4 : printf(" e quatro.\n"); break;
-				case 5 : printf(" e cinco.\n"); break;
-				case 6 : printf(" e seis.\n"); break;
-				case 7 : printf(" e sete.\n"); break;
-				case 8 : printf(" e oito.\n"); break;
-				case 9 : printf(" e nove.\n"); break;
-				}
-			}
-		}
+		
 }
