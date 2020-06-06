@@ -4,7 +4,6 @@ int main(){
 	int a, b, c;
 	int area;
 	do{
-		
 		printf("Do you want to exit?(Y-yes|N-no)\n");
 		scanf("%d", &op);
 		switch(op){
