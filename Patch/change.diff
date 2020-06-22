@@ -1,0 +1,12 @@
+--- HelloWorld2.c	2020-04-12 11:15:53.158244000 -0300
++++ HelloWorld1.c	2020-06-20 15:49:00.423154700 -0300
+@@ -1,4 +1,6 @@
+ #include<stdio.h>
+-main(){
+-    puts("Hello World!");
++int main(){
++    puts("Hello World!\n");
++	puts("Version 1.0\n");
++	return 0;
+ }
+\ No newline at end of file
