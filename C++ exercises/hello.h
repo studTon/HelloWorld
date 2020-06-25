@@ -7,7 +7,7 @@ void hello(void){
 }
 
 void greet(void){
-	cout << "Hi! How are you?" endl;
+	cout << "Hi! How are you?" << endl;
 }
 
 void name(void){
