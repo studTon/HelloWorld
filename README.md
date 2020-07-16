@@ -1,3 +1,3 @@
 # HelloWorld
- My small projects. **Exercises about Logic Programming** 
+ My **Exercises about Logic Programming** 
 
