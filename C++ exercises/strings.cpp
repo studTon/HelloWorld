@@ -8,6 +8,6 @@ int main(void){
 	string phrase = "I'm doing a great laugh!";
 	cout << phrase << endl;
 	cout << phrase.length() << " characters." << endl;
-	cout << phrase.find("laugh", 0) << " index" << endl;
+	cout << "On index " << phrase.find("laugh", 0)<< " starts laugh"<< endl;
 	return 0;
 }
