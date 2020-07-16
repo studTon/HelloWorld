@@ -1,18 +1,16 @@
 #include <iostream>
 #include <iomanip>
 using namespace std;
-void instructor(void){
+void instructions(void){
 	char op;
 	cout << "Do you want instructions?" << endl;
 	op = cin.get();
-	if(op == 'n' || op == 'N')
-		return;
-	else
+	if(!(op == 'n' || op == 'N'))
 		cout << "Rules: ..........." << endl;
 }
 
 int main(){
 	
-	instructor();
+	instructions();
 	return 0;
 }
