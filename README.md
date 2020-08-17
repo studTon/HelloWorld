@@ -1,3 +1,3 @@
 # HelloWorld
- My **Exercises about Logic Programming** 
+ My **exercises about Logic Programming** 
 
