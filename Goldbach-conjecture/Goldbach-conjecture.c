@@ -30,7 +30,8 @@ int main(void){
 				numbers*/
 				
 				//Conclusion if both values are prime numbers
-				if(prime(num - aux) == 2 && prime(aux) == 2){
+				if(checkPrime(num - aux) == 2 && checkPrime(aux) == 2)
+				{
 					prime1 = aux;
 					prime2 = num - aux;
 					break;

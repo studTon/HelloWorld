@@ -1,6 +1,6 @@
 
 //Function that checks if a number is prime number
-int prime(int num){
+int checkPrime(int num){
 	int div;
 	int i;
 	div = 1;
