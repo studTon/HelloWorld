@@ -1,6 +1,6 @@
 /*
 This algorithm shows Goldbach's conjecture:
-Goldbach's Conjecture describes an even number greater than 2 as sum
+Goldbach's Conjecture describes an even number greater than 2 as a sum
 of two prime numbers.
 */
 #include <stdio.h>

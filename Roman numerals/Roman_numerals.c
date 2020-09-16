@@ -1,10 +1,13 @@
 #include <stdio.h>
-#define size 16
-main() {
+
+int main(void) {
+	int const size = 16;
 	int dec = 0, i;
 	char rom[size];
+	
 	printf("Type the roman numeral: ");
 	gets(rom);
+	
 	for(i=0;i < size;i++){
 		switch(rom[i]){
 			case 'i': 
@@ -61,4 +64,5 @@ main() {
 		}
 	}
 	printf("Decimal number: %d\n", dec);
+	return 0;
 }

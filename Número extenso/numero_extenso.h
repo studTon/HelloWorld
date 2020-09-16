@@ -1,40 +1,27 @@
-
-/*
----------------------------------------------
-Acredito que esse código se encaixa bem numa 
-função para converter os algarismos digitados 
-em números por extenso.
----------------------------------------------
-*/
-#include <stdio.h>
-main(){
-	
-	int num, cent, deze, unid;
-	
-	printf("Entre com o numero.\n");
-	scanf("%d", &num);
+/*Transformar número inteiro entre 0 e 999 em número por extenso*/
+void extenso(int num){
 	//Fatoração dos algarismos
-	cent = num / 100;
-	deze = (num % 100) / 10;
-	unid = (num % 100) % 10;
+	int cent = num / 100;
+	int deze = (num % 100) / 10;
+	int unid = (num % 100) % 10;
 	/*Nomes de cada casa do numeral*/
 	if(cent >= 1 && cent <= 9){
-			switch(cent){
-				case 1: if(deze!=0||unid!=0){
-							printf("Cento");
-						}
-						else{
-							printf("Cem");
-						}break;
-				case 2: printf("Duzentos"); break;
-				case 3: printf("Trezentos"); break;
-				case 4: printf("Quatrocentos"); break;
-				case 5: printf("Quinhentos"); break;
-				case 6: printf("Seiscentos"); break;
-				case 7: printf("Setecentos"); break;
-				case 8: printf("Oitocentos"); break;
-				case 9: printf("Novecentos"); break;
-			}
+		switch(cent){
+			case 1: if(deze!=0||unid!=0){
+						printf("Cento");
+					}
+					else{
+						printf("Cem");
+					}break;
+			case 2: printf("Duzentos"); break;
+			case 3: printf("Trezentos"); break;
+			case 4: printf("Quatrocentos"); break;
+			case 5: printf("Quinhentos"); break;
+			case 6: printf("Seiscentos"); break;
+			case 7: printf("Setecentos"); break;
+			case 8: printf("Oitocentos"); break;
+			case 9: printf("Novecentos"); break;
+		}
 	}
 	if((cent==0)&&(deze==0)){
 		switch(unid){
@@ -141,5 +128,5 @@ main(){
 			case 9 : printf(" e nove.\n"); break;
 		}
 	}
-		
 }
+

@@ -1,9 +1,11 @@
 #include<stdio.h>
-int main(){
+int main(void){
 	int num, i, div;
-	char option = 1;
+	int option = 1;
+	
 	num = 1;
 	printf("PRIME LIST UNTIL 1000\n\n");
+	
 	do{
 		do{
 			i = 0;
@@ -18,8 +20,8 @@ int main(){
 			num++;
 		}while(num <= 1000);
 		printf("Quit?: "); //The exit is bugged.
-		scanf("%c", &option);
-	}while(option == '1');
+		scanf("%d", &option);
+	}while(option > 1);
 	return 0;
 }
 
